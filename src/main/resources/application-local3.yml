@@ -5,10 +5,14 @@ server:
 spring:
   application:
     name: eureka_client3
-
+  cloud:
+    inetutils:
+      ignoredInterfaces[0]: lo
+      ignoredInterfaces[1]: eth0
+      ignoredInterfaces[2]: eth1
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:10001/eureka/
+      defaultZone: http://host.docker.internal:10001/eureka/
 

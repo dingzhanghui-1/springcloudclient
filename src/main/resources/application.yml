@@ -5,9 +5,17 @@ server:
 spring:
   application:
     name: eureka_client1
-
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+        - docker0
+        - veth.*
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:10001/eureka/
+      defaultZone: http://host.docker.internal:10001/eureka/
+
+
+
+
